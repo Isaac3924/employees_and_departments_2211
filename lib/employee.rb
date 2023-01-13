@@ -19,6 +19,7 @@ class Employee
 
   def assign_expense(expense, department)
     @expense_responsibilty_list[department] << expense
+    
     @total_expense_responsibilty += expense
   end
 end

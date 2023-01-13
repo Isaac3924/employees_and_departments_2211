@@ -23,7 +23,7 @@ class Department
     def assign_expense_to_employee(employee, expenses_element)
       if @employees.include?(employee)
         expense = @listed_expenses[expenses_element]
-
+        
         employee.assign_expense(expense, self)
       else
         "Employee not in this department."
