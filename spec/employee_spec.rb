@@ -14,12 +14,26 @@ RSpec.describe Employee do
       expect(bobbi.name).to eq("Bobbi Jaeger")
       expect(bobbi.age).to eq(30)
       expect(bobbi.salary).to eq(100000)
+      expect(bobbi.expense_responsibilty_list).to eq( {} )
+      expect(bobbi.total_expense_responsibilty).to eq(0)
     end
 
     it '#give_raise' do  
       bobbi.give_raise(5000)
 
       expect(bobbi.salary).to eq(105000)
+    end
+  end
+
+  describe 'iteration4' do
+    it '#assign_expense' do  
+      bobbi.assign_expense(400, 'department1')
+      bobbi.assign_expense(330, 'department1')
+      bobbi.assign_expense(30, 'department2')
+
+      expect(bobbi.expense_responsibilty_list).to eq( {'department1' => [400, 330],
+                                                       'department2' => [30]} )
+      expect(bobbi.total_expense_responsibilty).to eq(760)
     end
   end
 end
