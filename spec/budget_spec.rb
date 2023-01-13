@@ -82,7 +82,7 @@ RSpec.describe Budget do
       expect(budget1.list_cheap_departments).to eq( [customer_service, party_department] )
     end
 
-    xit '#list_all_employee_salaries' do
+    it '#list_all_employee_salaries' do
       expect(budget1.list_all_employee_salaries).to eq( {bobbi => bobbi.salary,
                                                          aaron => aaron.salary,
                                                          slurms => slurms.salary,

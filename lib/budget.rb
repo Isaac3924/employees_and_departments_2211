@@ -24,6 +24,14 @@ class Budget
   end
 
   def list_all_employee_salaries
-  
+    employee_salary = Hash.new{ |key, value| key[value] = 0 }
+
+    @departments.each do |department|
+      department.employees.each do |employee|
+        employee_salary[employee] = employee.salary
+      end
+    end
+
+    employee_salary
   end
 end
