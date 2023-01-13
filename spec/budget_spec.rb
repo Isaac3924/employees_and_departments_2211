@@ -49,7 +49,7 @@ RSpec.describe Budget do
 
   end
 
-  describe 'iteration3.1' do
+  describe 'iteration3.2' do
     before do
       customer_service.expense(10)
       party_department.expense(420)
@@ -70,26 +70,26 @@ RSpec.describe Budget do
       budget1.add_department(human_resources)
     end
 
-    xit '#add_department' do 
+    it '#add_department' do 
       expect(budget1.departments).to eq( [customer_service, party_department, tax_evasion, human_resources] )
     end
 
-    xit '#list_all_department_names' do  
-      expect(budget1.list_all_departments).to eq(["Customer Service", "Party Department", "Tax Evasion Department", "Human Resources"])
+    it '#list_all_department_names' do  
+      expect(budget1.list_all_department_names).to eq(["Customer Service", "Party Department", "Tax Evasion Department", "Human Resources"])
     end
     
-    xit '#list_cheap_departments' do  
+    it '#list_cheap_departments' do  
       expect(budget1.list_cheap_departments).to eq( [customer_service, party_department] )
     end
 
-    xit '#list_employee_salaries' do
-      expect(budget1.list_employee_salaries).to eq( {bobbi => bobbi.salary,
-                                                     aaron => aaron.salary,
-                                                     slurms => slurms.salary,
-                                                     bob => bob.salary,
-                                                     andrew => andrew.salary,
-                                                     glados => glados.salary,
-                                                     jack => jack.salary} )
+    xit '#list_all_employee_salaries' do
+      expect(budget1.list_all_employee_salaries).to eq( {bobbi => bobbi.salary,
+                                                         aaron => aaron.salary,
+                                                         slurms => slurms.salary,
+                                                         bob => bob.salary,
+                                                         andrew => andrew.salary,
+                                                         glados => glados.salary,
+                                                         jack => jack.salary} )
     end
   end
 end
