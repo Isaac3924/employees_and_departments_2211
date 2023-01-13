@@ -19,6 +19,7 @@ RSpec.describe Department do
     it 'has attributes' do  
       expect(customer_service.name).to eq("Customer Service")
       expect(customer_service.employees).to eq( [] )
+      expect(customer_service.employees).to eq( [] )
     end
 
     it '#hire' do  
@@ -34,6 +35,7 @@ RSpec.describe Department do
       customer_service.expense(25)
 
       expect(customer_service.expenses).to eq(125)
+      expect(customer_service.listed_expenses).to eq([100, 25])
     end
   end
 end
