@@ -8,4 +8,8 @@ class Department
       @employees = []
       @expenses = 0
     end
+
+    def hire(employee)
+      @employees << employee
+    end
   end
