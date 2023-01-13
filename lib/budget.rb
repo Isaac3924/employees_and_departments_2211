@@ -34,4 +34,8 @@ class Budget
 
     employee_salary
   end
+
+  def list_employee_expenses_responsbility
+    'ran out of time would need to iterate thru departments then employees'
+  end
 end
