@@ -9,7 +9,7 @@ class Employee
     @name = attribute_hash[:name]
     @age = attribute_hash[:age].to_i
     @salary = attribute_hash[:salary].delete("$").to_i
-    @expense_responsibilty_list = Hash.new{ |key, value| key[value] = 0 }
+    @expense_responsibilty_list = Hash.new{ |key, value| key[value] = [] }
     @total_expense_responsibilty = 0
   end
 
@@ -18,7 +18,7 @@ class Employee
   end
 
   def assign_expense(expense, department)
-    @expense_responsibilty_list[department] = expense
+    @expense_responsibilty_list[department] << expense
     @total_expense_responsibilty += expense
   end
 end
