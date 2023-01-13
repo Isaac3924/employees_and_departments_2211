@@ -83,13 +83,41 @@ RSpec.describe Budget do
     end
 
     it '#list_all_employee_salaries' do
-      expect(budget1.list_all_employee_salaries).to eq( {bobbi => bobbi.salary,
-                                                         aaron => aaron.salary,
-                                                         slurms => slurms.salary,
-                                                         bob => bob.salary,
-                                                         andrew => andrew.salary,
-                                                         glados => glados.salary,
-                                                         jack => jack.salary} )
+      expected = {bobbi => bobbi.salary,
+                  aaron => aaron.salary,
+                  slurms => slurms.salary,
+                  bob => bob.salary,
+                  andrew => andrew.salary,
+                  glados => glados.salary,
+                  jack => jack.salary}
+      expect(budget1.list_all_employee_salaries).to eq(expected)
     end
+  end
+
+  describe 'iteration 4' do
+    before do
+      customer_service.expense(10)
+      party_department.expense(420)
+      tax_evasion.expense(500000000)
+      human_resources.expense(1500)
+  
+      customer_service.hire(bobbi)
+      customer_service.hire(aaron)
+      party_department.hire(slurms)
+      tax_evasion.hire(bob)
+      tax_evasion.hire(andrew)
+      human_resources.hire(glados)
+      human_resources.hire(jack)
+  
+      budget1.add_department(customer_service)
+      budget1.add_department(party_department)
+      budget1.add_department(tax_evasion)
+      budget1.add_department(human_resources)
+    end
+  end
+
+  xit '#list_employee_expenses_responsbility' do
+
+    expect(budget1).to eq(0)
   end
 end
