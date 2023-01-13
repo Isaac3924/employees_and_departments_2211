@@ -1,5 +1,5 @@
 class Department
-    attr_reader :year,
+    attr_reader :name,
                 :employees,
                 :expenses
   
