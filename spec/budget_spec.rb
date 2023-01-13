@@ -116,9 +116,9 @@ RSpec.describe Budget do
     end
   end
 
-  xit '#list_employee_expenses_responsbility' do
-    expected = {glados => 'INSERT',
-                andrew => 'INSERT'}
+  it '#list_employee_expenses_responsbility' do
+    expected = {glados => [glados.expense_responsibilty_list, glados.total_expense_responsibilty]
+                andrew => [andrew.expense_responsibilty_list, andrew.total_expense_responsibilty] }
 
     expect(budget1.list_employee_expenses_responsbility).to eq(expected)
   end
